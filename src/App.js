@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {Component} from 'react';
 
 function App () {
   const friends = [ 'Sami', 'Farmee', 'Arishamma', 'Aarash', 'Ammapakhi', 'ArishammaPakhi' ];
@@ -11,7 +12,6 @@ function App () {
     {name: 'Aarash', age: 5, location: 'Banasree'}
   ]
   return (
-
     <div className="App">
       {
         bestFriends.map( bestFriend => <BestFriends name={bestFriend.name} age={bestFriend.age} location={bestFriend.location}></BestFriends> )
@@ -53,7 +53,7 @@ function BestFriends ( props ) {
       <h3>Age: {props.age}</h3>
       <h4>Location: {props.location}</h4>
     </div>
-  )
+  );
 }
 
 export default App;
