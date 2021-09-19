@@ -44,3 +44,13 @@
   border-radius: 20px;
   text-align: center;
 }
+
+.friends{
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  background-color:floralwhite;
+  border: 3px solid blue;
+  border-radius: 20px;
+  padding: 20px;
+}

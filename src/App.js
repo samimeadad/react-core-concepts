@@ -2,64 +2,58 @@ import logo from './logo.svg';
 import './App.css';
 
 function App () {
-  const number = 555;
+  const friends = [ 'Sami', 'Farmee', 'Arishamma', 'Aarash', 'Ammapakhi', 'ArishammaPakhi' ];
 
-  const singer = {
-    name: 'Dr. Mahfuz',
-    job: 'singer'
-  };
-
-  const evaRahman = {
-    name: 'Eva Rahman',
-    job: 'Kokil Konthi Gaan Eer Pakhi'
-  };
-
-  const evaRahmanStyle = {
-    backgroundColor: 'red',
-    padding: '20px',
-    color: 'white',
-    borderRadius: '20px'
-  };
-
+  const bestFriends = [
+    {name: 'Sami', age: 40, location: 'Uttara'},
+    {name: 'Farmee', age: 36, location: 'Uttara'},
+    {name: 'Arishamma', age: 1, location: 'Banasree'},
+    {name: 'Aarash', age: 5, location: 'Banasree'}
+  ]
   return (
+
     <div className="App">
-      <header className="App-header">
-        <h2>Yo Yo React Mama!!! Tomare Ami Paisi!!!</h2>
-        <p>Happy Happy React Day!!!</p>
+      {
+        bestFriends.map( bestFriend => <BestFriends name={bestFriend.name} age={bestFriend.age} location={bestFriend.location}></BestFriends> )
+      }
+      <ul>
+        {
+          friends.map( friend => <li>{friend}</li> )
+        }
+      </ul>
+      <Person name="Sami Meadad Choudhury" profession="Full-stack MERN Developer" age="40"></Person>
+      <Person name="Tasnuva Kawsar Farmee" profession="Teacher" age="36"></Person>
+      <Person name="Arishamma" profession="Ammapakhi Dustupakhi" age="1"></Person>
+      <Person name="Aarash" profession="Kannakati kora" age="6"></Person>
+    </div >
+  );
+}
 
-        <div className="container">
-          <h3>This is inside my Container</h3>
-          <p>My favorite number: {number}</p>
-          <p>My favorite singer: {singer.name}</p>
-          <p style={evaRahmanStyle}>Real Singer: {evaRahman.job}</p>
-        </div>
-
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-        <a
-          className="App-link"
-          href="https://youtube.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Go To Youtube
-        </a>
-      </header>
+function Person ( props ) {
+  const person = {
+    margin: '20px',
+    backgroundColor: 'burlywood',
+    border: '3px solid hotpink',
+    borderRadius: '20px'
+  }
+  return (
+    // <div className="person">
+    <div style={person}>
+      <h1>Name: {props.name}</h1>
+      <h4>Profession: {props.profession}</h4>
+      <h4>Age: {props.age}</h4>
     </div>
   );
+}
+
+function BestFriends ( props ) {
+  return (
+    <div className="friends">
+      <h2>Name: {props.name}</h2>
+      <h3>Age: {props.age}</h3>
+      <h4>Location: {props.location}</h4>
+    </div>
+  )
 }
 
 export default App;
